@@ -25,14 +25,7 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/stat_notify_error"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="21dp"
-        tools:srcCompat="@android:drawable/stat_notify_error" />
+
   </androidx.constraintlayout.widget.ConstraintLayout>
 
   </androidx.constraintlayout.widget.ConstraintLayout>
