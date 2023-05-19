@@ -34,54 +34,59 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/Main_toMap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/mapicon"
-            tools:layout_editor_absoluteY="20dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/mapicon" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
+            android:id="@+id/Main_toWorkout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:background="@android:color/transparent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton7"
-            app:srcCompat="@drawable/workouticon"
-            tools:layout_editor_absoluteY="20dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Main_toMap"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/workouticon" />
 
         <ImageButton
-            android:id="@+id/imageButton9"
+            android:id="@+id/Main_toMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:background="@android:color/transparent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton8"
-            app:srcCompat="@drawable/homeicon"
-            tools:layout_editor_absoluteY="20dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Main_toWorkout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/homeicon" />
 
         <ImageButton
-            android:id="@+id/imageButton10"
+            android:id="@+id/Main_toStreak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
             android:background="@android:color/transparent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton9"
-            app:srcCompat="@drawable/streakicon"
-            tools:layout_editor_absoluteY="20dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Main_toMain"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/streakicon" />
 
         <ImageButton
-            android:id="@+id/imageButton11"
+            android:id="@+id/Main_toSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:background="@android:color/transparent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton10"
-            app:srcCompat="@drawable/settingsicon"
-            tools:layout_editor_absoluteY="20dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Main_toStreak"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/settingsicon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
