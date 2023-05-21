@@ -34,11 +34,12 @@ public class MainActivity extends AppCompatActivity {
         bottomNavButtonManagement();
 
 
-        testDataRef = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("testNum");
+        testDataRef = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Gym1");
         testText = findViewById(R.id.testTextBox);
 
 
         replaceText();
+
 
     }
 
@@ -46,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         testDataRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange( DataSnapshot snapshot) {
-                
-                String textValue = snapshot.getValue(String.class);
-                testText.setText(textValue;
+
+                String textValue = String.valueOf(snapshot.getValue(Integer.class));
+                testText.setText(textValue);
             }
 
             @Override

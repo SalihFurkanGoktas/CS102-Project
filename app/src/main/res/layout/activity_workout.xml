@@ -8,6 +8,7 @@
     tools:context=".WorkoutActivity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout3"
       android:layout_width="match_parent"
       android:layout_height="80dp"
       android:background="@color/black"
@@ -15,9 +16,19 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="165dp"
+        android:layout_height="78dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tonedlogo" />
+
   </androidx.constraintlayout.widget.ConstraintLayout>
 
   <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout4"
       android:layout_width="match_parent"
       android:layout_height="80dp"
       android:background="@color/white"
@@ -26,6 +37,72 @@
       app:layout_constraintStart_toStartOf="parent">
 
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/Workout_toMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mapicon" />
+
+    <ImageButton
+        android:id="@+id/Workout_toWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Workout_toMap"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/workouticon" />
+
+    <ImageButton
+        android:id="@+id/Workout_toMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Workout_toWorkout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homeicon" />
+
+    <ImageButton
+        android:id="@+id/Workout_toStreak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Workout_toMain"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/streakicon" />
+
+    <ImageButton
+        android:id="@+id/Workout_toSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Workout_toStreak"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settingsicon" />
+
 
   </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <Button
+      android:id="@+id/gymAddButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="click to add"
+      app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
