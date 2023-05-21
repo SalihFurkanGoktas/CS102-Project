@@ -41,11 +41,20 @@ public class WorkoutActivity extends AppCompatActivity {
         bottomNavButtonManagement();
 
 
+
         //// TEST PURPOSES - Feel free to erase.
         testDataRef2 = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Gym1");
         testGymButton = findViewById(R.id.gymAddButton);
         replaceText();
         gymButtonMan();
+        if (firstClick)
+        {
+            testGymButton.setText("START");
+        }
+        else
+        {
+            testGymButton.setText("STOP");
+        }
         ////
 
     }
@@ -61,13 +70,13 @@ public class WorkoutActivity extends AppCompatActivity {
                 {
                     testDataRef2.setValue(testCurrentVal + 1);
                     firstClick = false;
-                    testGymButton.setText("end it");
+                    testGymButton.setText("STOP");
                 }
                 else
                 {
                     testDataRef2.setValue(testCurrentVal - 1);
                     firstClick = true;
-                    testGymButton.setText("start again?");
+                    testGymButton.setText("START");
                 }
 
             }
