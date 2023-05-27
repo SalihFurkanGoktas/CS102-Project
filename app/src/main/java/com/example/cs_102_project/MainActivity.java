@@ -36,26 +36,25 @@ public class MainActivity extends AppCompatActivity {
 
 //        testDataRef = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Gym1");
 //        testText = findViewById(R.id.testTextBox);
-
-
-        replaceText();
-
+//  replaceText()
 
     }
 
-    private void replaceText() {
-        testDataRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange( DataSnapshot snapshot) {
-
-                String textValue = String.valueOf(snapshot.getValue(Integer.class));
-                testText.setText(textValue);
-            }
-
-            @Override
-            public void onCancelled( DatabaseError error) {}
-        });
-    }
+    //// TEST PURPOSES ////
+    
+//    private void replaceText() {
+//        testDataRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange( DataSnapshot snapshot) {
+//
+//                String textValue = String.valueOf(snapshot.getValue(Integer.class));
+//                testText.setText(textValue);
+//            }
+//
+//            @Override
+//            public void onCancelled( DatabaseError error) {}
+//        });
+//    }
 
 
 
