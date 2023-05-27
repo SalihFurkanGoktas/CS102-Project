@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         bottomNavButtonManagement();
 
 
-        testDataRef = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Gym1");
-        testText = findViewById(R.id.testTextBox);
+//        testDataRef = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Gym1");
+//        testText = findViewById(R.id.testTextBox);
 
 
         replaceText();
