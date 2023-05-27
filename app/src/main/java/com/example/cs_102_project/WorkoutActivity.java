@@ -25,10 +25,9 @@ public class WorkoutActivity extends AppCompatActivity {
 
 
     //// TEST PURPOSES - Feel free to erase.
-    private Button testGymButton;
-    private DatabaseReference testDataRef2;
-    private int testCurrentVal;
-    private static boolean firstClick = true;
+//    private DatabaseReference testDataRef2;
+//    private int testCurrentVal;
+//    private static boolean firstClick = true;
     ////
 
     @Override
@@ -43,61 +42,61 @@ public class WorkoutActivity extends AppCompatActivity {
 
 
         //// TEST PURPOSES - Feel free to erase.
-        testDataRef2 = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Gym1");
-        testGymButton = findViewById(R.id.gymAddButton);
-        replaceText();
-        gymButtonMan();
-        if (firstClick)
-        {
-            testGymButton.setText("START");
-        }
-        else
-        {
-            testGymButton.setText("STOP");
-        }
-        ////
+//        testDataRef2 = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Gym1");
+////        testGymButton = findViewById(R.id.gymAddButton);
+////        replaceText();
+////        gymButtonMan();
+////        if (firstClick)
+////        {
+////            testGymButton.setText("START");
+////        }
+////        else
+////        {
+////            testGymButton.setText("STOP");
+////        }
+//        ////
 
     }
 
     // TEST PURPOSES - Feel free to erase.
-    private void gymButtonMan()
-    {
-        testGymButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                if (firstClick)
-                {
-                    testDataRef2.setValue(testCurrentVal + 1);
-                    firstClick = false;
-                    testGymButton.setText("STOP");
-                }
-                else
-                {
-                    testDataRef2.setValue(testCurrentVal - 1);
-                    firstClick = true;
-                    testGymButton.setText("START");
-                }
-
-            }
-        });
-    }
+//    private void gymButtonMan()
+//    {
+//        testGymButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view)
+//            {
+//                if (firstClick)
+//                {
+//                    testDataRef2.setValue(testCurrentVal + 1);
+//                    firstClick = false;
+//                    testGymButton.setText("STOP");
+//                }
+//                else
+//                {
+//                    testDataRef2.setValue(testCurrentVal - 1);
+//                    firstClick = true;
+//                    testGymButton.setText("START");
+//                }
+//
+//            }
+//        });
+//    }
 
     // TEST PURPOSES - Feel free to erase.
-    private void replaceText()
-    {
-        testDataRef2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange( DataSnapshot snapshot) {
-
-                testCurrentVal = snapshot.getValue(Integer.class);
-
-            }
-
-            @Override
-            public void onCancelled( DatabaseError error) {}
-        });
-    }
+//    private void replaceText()
+//    {
+//        testDataRef2.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange( DataSnapshot snapshot) {
+//
+//                testCurrentVal = snapshot.getValue(Integer.class);
+//
+//            }
+//
+//            @Override
+//            public void onCancelled( DatabaseError error) {}
+//        });
+//    }
 
 
 
