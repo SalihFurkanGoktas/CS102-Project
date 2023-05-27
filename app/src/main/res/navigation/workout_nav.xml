@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/workout_nav"
+    app:startDestination="@id/workout_mainmenu2">
+    <fragment
+        android:id="@+id/workout_mainmenu2"
+        android:name="com.example.cs_102_project.workout_mainmenu"
+        android:label="fragment_workout_mainmenu"
+        tools:layout="@layout/fragment_workout_mainmenu" >
+        <action
+            android:id="@+id/action_workout_mainmenu2_to_workout_1"
+            app:destination="@id/workout_1" />
+        <action
+            android:id="@+id/action_workout_mainmenu2_to_workout_2"
+            app:destination="@id/workout_2" />
+        <action
+            android:id="@+id/action_workout_mainmenu2_to_workout_3"
+            app:destination="@id/workout_3" />
+        <action
+            android:id="@+id/action_workout_mainmenu2_to_workout_4"
+            app:destination="@id/workout_4" />
+        <action
+            android:id="@+id/action_workout_mainmenu2_to_workout_5"
+            app:destination="@id/workout_5" />
+        <action
+            android:id="@+id/action_workout_mainmenu2_to_workout_6"
+            app:destination="@id/workout_6" />
+    </fragment>
+    <fragment
+        android:id="@+id/workout_1"
+        android:name="com.example.cs_102_project.workout_1"
+        android:label="fragment_workout_1"
+        tools:layout="@layout/fragment_workout_1" />
+    <fragment
+        android:id="@+id/workout_2"
+        android:name="com.example.cs_102_project.workout_2"
+        android:label="fragment_workout_2"
+        tools:layout="@layout/fragment_workout_2" />
+    <fragment
+        android:id="@+id/workout_3"
+        android:name="com.example.cs_102_project.workout_3"
+        android:label="fragment_workout_3"
+        tools:layout="@layout/fragment_workout_3" />
+    <fragment
+        android:id="@+id/workout_4"
+        android:name="com.example.cs_102_project.workout_4"
+        android:label="fragment_workout_4"
+        tools:layout="@layout/fragment_workout_4" />
+    <fragment
+        android:id="@+id/workout_5"
+        android:name="com.example.cs_102_project.workout_5"
+        android:label="fragment_workout_5"
+        tools:layout="@layout/fragment_workout_5" />
+    <fragment
+        android:id="@+id/workout_6"
+        android:name="com.example.cs_102_project.workout_6"
+        android:label="fragment_workout_6"
+        tools:layout="@layout/fragment_workout_6" />
+</navigation>
