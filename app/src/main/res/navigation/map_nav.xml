@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/map_nav">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_nav"
+    app:startDestination="@id/mapFragment_MapScreen">
 
+    <fragment
+        android:id="@+id/mapFragment_MapScreen"
+        android:name="com.example.cs_102_project.MapFragment_MapScreen"
+        android:label="fragment_map__map_screen"
+        tools:layout="@layout/fragment_map__map_screen" >
+        <action
+            android:id="@+id/action_mapFragment_MapScreen_to_map_dormGym"
+            app:destination="@id/map_dormGym" />
+    </fragment>
+    <fragment
+        android:id="@+id/map_dormGym"
+        android:name="com.example.cs_102_project.map_dormGym"
+        android:label="map_dormGym" />
 </navigation>

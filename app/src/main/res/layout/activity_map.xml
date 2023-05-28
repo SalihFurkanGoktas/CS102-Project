@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
+    <include
+        layout="@layout/content_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="80dp" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"

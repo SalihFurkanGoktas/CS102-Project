@@ -31,9 +31,10 @@ public class StreakActivity extends AppCompatActivity {
     private int imageWidth = 100;  // Adjust the desired image width
     private int imageHeight  = 100;
 
-    private static final String PREFS_NAME = "Preferences";
-    private static final String STREAK_KEY = "streak";
-    private static final String CROSS_IMAGE_KEY = "cross_image_";
+        //can be deleted probably
+//    private static final String PREFS_NAME = "Preferences";
+//    private static final String STREAK_KEY = "streak";
+//    private static final String CROSS_IMAGE_KEY = "cross_image_";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
