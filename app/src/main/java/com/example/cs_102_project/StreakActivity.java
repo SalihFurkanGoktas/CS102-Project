@@ -3,7 +3,6 @@ package com.example.cs_102_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
@@ -45,7 +44,7 @@ public class StreakActivity extends AppCompatActivity {
 
         gridCrosses = findViewById(R.id.gridCrosses);
 
-        loadStreak();
+        streak = MainSharedPref.loadStreak();
         updateStreakTextView();
         displayCrosses();
     }
@@ -93,7 +92,7 @@ public class StreakActivity extends AppCompatActivity {
         streak++;
 
 
-        saveStreak();
+        MainSharedPref.saveStreak(streak);
         updateStreakTextView();
     }
 
@@ -102,16 +101,16 @@ public class StreakActivity extends AppCompatActivity {
         streakTextView.setText("Your Current Streak Count: " + streak);
     }
 
-    private void saveStreak() {
-        SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
-        editor.putInt(STREAK_KEY, streak);
-        editor.apply();
-    }
-
-    private void loadStreak() {
-        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        streak = prefs.getInt(STREAK_KEY, 0);
-    }
+//    private void saveStreak() {
+//        SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
+//        editor.putInt(STREAK_KEY, streak);
+//        editor.apply();
+//    }
+//
+//    private void loadStreak() {
+//        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+//        streak = prefs.getInt(STREAK_KEY, 0);
+//    }
 
     private void displayCrosses()
     {
@@ -144,6 +143,7 @@ public class StreakActivity extends AppCompatActivity {
     public void reset(View view)
     {
         streak = 0;
+        MainSharedPref.saveStreak(streak);
         gridCrosses.removeAllViews();
 
         updateStreakTextView();
