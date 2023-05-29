@@ -104,6 +104,13 @@ public class workout_1 extends Fragment implements View.OnClickListener {
         finishBtn = view.findViewById(R.id.finishBtn1);
 
 
+        finishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainSharedPref.saveStreak(MainSharedPref.loadStreak() + 1);
+            }
+        });
+
     }
 
     public void initMoveWeightRep(View view) {

@@ -97,13 +97,9 @@
   <androidx.fragment.app.FragmentContainerView
       android:id="@+id/fragmentContainerView3"
       android:name="androidx.navigation.fragment.NavHostFragment"
-      android:layout_width="387dp"
-      android:layout_height="583dp"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
       app:defaultNavHost="true"
-      app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
       app:navGraph="@navigation/workout_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
