@@ -10,23 +10,22 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class map_mainGym extends Fragment {
+public class map_eastGym extends Fragment {
 
+    private TextView eastGymMembers;
 
-    private TextView mainGymMembers;
-    public map_mainGym() {
+    public map_eastGym() {
         // Required empty public constructor
     }
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_map_main_gym, container, false);
-        mainGymMembers = view.findViewById(R.id.mainGymMemberCount);
-        mainGymMembers.setText(String.valueOf(MainSharedPref.loadGymMain()));
+        View view = inflater.inflate(R.layout.fragment_map_east_gym, container, false);
+        eastGymMembers = view.findViewById(R.id.eastGymMemberCount);
+        eastGymMembers.setText(String.valueOf(MainSharedPref.loadGymEast()));
 
         return view;
     }

@@ -14,7 +14,7 @@ import android.widget.Button;
 public class MapFragment_MapScreen extends Fragment {
 
 
-    private Button dormGymNavButton;
+    private Button dormGymNavButton, mainGymNavButton, eastGymNavButton;
 
     public MapFragment_MapScreen() {
         // Required empty public constructor
@@ -29,6 +29,13 @@ public class MapFragment_MapScreen extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_map__map_screen, container, false);
+        gymFragmentNavManagement(view);
+
+        return view;
+    }
+
+    public void gymFragmentNavManagement(View view)
+    {
         dormGymNavButton = view.findViewById(R.id.dormGymNavButton);
         dormGymNavButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,7 +43,20 @@ public class MapFragment_MapScreen extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_mapFragment_MapScreen_to_map_dormGym);
             }
         });
+        mainGymNavButton = view.findViewById(R.id.mainGymNavButton);
+        mainGymNavButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_mapFragment_MapScreen_to_map_mainGym);
+            }
+        });
+        eastGymNavButton = view.findViewById(R.id.eastGymNavButton);
+        eastGymNavButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_mapFragment_MapScreen_to_map_eastGym);
+            }
+        });
 
-        return view;
     }
 }

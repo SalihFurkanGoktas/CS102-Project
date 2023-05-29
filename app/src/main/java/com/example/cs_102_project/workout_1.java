@@ -110,6 +110,7 @@ public class workout_1 extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 MainSharedPref.saveStreak(MainSharedPref.loadStreak() + 1);
+                MainSharedPref.incrementGymCount();
             }
         });
 

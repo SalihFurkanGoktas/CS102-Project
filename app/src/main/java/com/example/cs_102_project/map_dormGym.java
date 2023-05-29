@@ -16,9 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class map_dormGym extends Fragment {
 
-    private TextView placeHold;
-    private TextView placeHold2;
-    private TextView placeHold3;
+    private TextView dormGymMembers;
+
 
 
 
@@ -32,12 +31,9 @@ public class map_dormGym extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_map_dorm_gym, container, false);
-        placeHold = view.findViewById(R.id.placeHoldTest);
-        placeHold.setText(String.valueOf(MainSharedPref.loadGymDorm()));
-        placeHold = view.findViewById(R.id.placeHoldTest2);
-        placeHold.setText(String.valueOf(MainSharedPref.loadGymMain()));
-        placeHold = view.findViewById(R.id.placeHoldTest3);
-        placeHold.setText(String.valueOf(MainSharedPref.loadGymEast()));
+        dormGymMembers = view.findViewById(R.id.dormGymMemberCount);
+        dormGymMembers.setText(String.valueOf(MainSharedPref.loadGymDorm()));
+
         return view;
     }
 

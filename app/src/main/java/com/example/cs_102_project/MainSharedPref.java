@@ -8,6 +8,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 
@@ -23,7 +24,6 @@ public class MainSharedPref {
     private static int gymMainNum;
     private static int gymEastNum;
 
-    private static int gymSelection = 0;
 
 
 
@@ -31,7 +31,7 @@ public class MainSharedPref {
 
     private static SharedPreferences instanceSharedPref;
     private static final String STREAK_KEY = "streak";
-
+    private static final String IS_EXERCISING_KEY = "isExercising";
     private static final String GYM_SELECT_KEY = "gymSelect";
 
     private MainSharedPref() {}
@@ -59,6 +59,15 @@ public class MainSharedPref {
 
     }
 
+    public static void saveIsExercising(boolean exerciseStatus) {
+        SharedPreferences.Editor editor = instanceSharedPref.edit();
+        editor.putBoolean(IS_EXERCISING_KEY, exerciseStatus);
+        editor.apply();
+
+    }
+
+
+
 
     public static int loadStreak() {
         return instanceSharedPref.getInt(STREAK_KEY, 0);
@@ -66,6 +75,10 @@ public class MainSharedPref {
 
     public static int loadGymSelection() {
         return instanceSharedPref.getInt(GYM_SELECT_KEY, 0);
+    }
+
+    public static boolean loadIsExercising() {
+        return instanceSharedPref.getBoolean(IS_EXERCISING_KEY, false);
     }
 
     private static void updateGyms() {
@@ -95,6 +108,42 @@ public class MainSharedPref {
         });
 
     }
+
+    public static void incrementGymCount()
+    {
+        int gymSelect = loadGymSelection();
+        if (gymSelect == 0)
+        {
+            gymMainRef.setValue(ServerValue.increment(1));
+        }
+        else if (gymSelect == 1)
+        {
+            gymDormRef.setValue(ServerValue.increment(1));
+        }
+        else if (gymSelect == 2)
+        {
+            gymEastRef.setValue(ServerValue.increment(1));
+        }
+    }
+
+    public static void decrementGymCount()
+    {
+        int gymSelect = loadGymSelection();
+        if (gymSelect == 0)
+        {
+            gymMainRef.setValue(ServerValue.increment(-1));
+        }
+        else if (gymSelect == 1)
+        {
+            gymDormRef.setValue(ServerValue.increment(-1));
+        }
+        else if (gymSelect == 2)
+        {
+            gymEastRef.setValue(ServerValue.increment(-1));
+        }
+    }
+
+
 
     public static int loadGymDorm()
     {
