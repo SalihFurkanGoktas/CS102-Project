@@ -79,9 +79,9 @@ public class workout_1 extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_workout_1, container, false);
 
-        backBtn = view.findViewById(R.id.backBtn);
-
-        backBtn.setOnClickListener(this);
+//          backBtn = view.findViewById(R.id.backBtn);
+//
+//        backBtn.setOnClickListener(this);
 
         return view;
     }
@@ -141,16 +141,16 @@ public class workout_1 extends Fragment implements View.OnClickListener {
         inReps9 = view.findViewById(R.id.inReps1_9);
         inReps10 = view.findViewById(R.id.inReps1_10);
 
-        Spinner spinner1 = view.findViewById(R.id.workoutSpinner);
-        Spinner spinner2 = view.findViewById(R.id.workoutSpinner2);
-        Spinner spinner3 = view.findViewById(R.id.workoutSpinner3);
-        Spinner spinner4 = view.findViewById(R.id.workoutSpinner4);
-        Spinner spinner5 = view.findViewById(R.id.workoutSpinner5);
-        Spinner spinner6 = view.findViewById(R.id.workoutSpinner6);
-        Spinner spinner7 = view.findViewById(R.id.workoutSpinner7);
-        Spinner spinner8 = view.findViewById(R.id.workoutSpinner8);
-        Spinner spinner9 = view.findViewById(R.id.workoutSpinner9);
-        Spinner spinner10 = view.findViewById(R.id.workoutSpinner10);
+        Spinner spinner1 = view.findViewById(R.id.workoutSpinner1_1);
+        Spinner spinner2 = view.findViewById(R.id.workoutSpinner1_2);
+        Spinner spinner3 = view.findViewById(R.id.workoutSpinner1_3);
+        Spinner spinner4 = view.findViewById(R.id.workoutSpinner1_4);
+        Spinner spinner5 = view.findViewById(R.id.workoutSpinner1_5);
+        Spinner spinner6 = view.findViewById(R.id.workoutSpinner1_6);
+        Spinner spinner7 = view.findViewById(R.id.workoutSpinner1_7);
+        Spinner spinner8 = view.findViewById(R.id.workoutSpinner1_8);
+        Spinner spinner9 = view.findViewById(R.id.workoutSpinner1_9);
+        Spinner spinner10 = view.findViewById(R.id.workoutSpinner1_10);
 
 
         ArrayAdapter<CharSequence> workoutAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.workout_array, android.R.layout.simple_spinner_item);
