@@ -4,31 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".workout_1">
 
-    <TextView
-        android:id="@+id/moveTxt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="72dp"
-        android:text="Move"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/weightTxt1"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/weightTxt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:text="Weight"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/backBtn"
@@ -41,17 +20,6 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/repsTxt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="108dp"
-        android:text="Reps"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/weightTxt1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -98,23 +66,9 @@
 
                 >
 
-                <EditText
-                    android:id="@+id/inMove1_10"
-                    android:layout_width="90dp"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="45dp"
-                    android:ems="10"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:text="10."
-                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_10"
-                    app:layout_constraintTop_toBottomOf="@+id/inMove1_9"
-                    tools:ignore="LabelFor" />
-
-                <EditText
-                    android:id="@+id/inMove1_1"
-                    android:layout_width="90dp"
+                <Spinner
+                    android:id="@+id/workoutSpinner"
+                    android:layout_width="180dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="45dp"
@@ -126,121 +80,136 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="LabelFor" />
 
-                <EditText
-                    android:id="@+id/inMove1_7"
-                    android:layout_width="90dp"
+                <Spinner
+                    android:id="@+id/workoutSpinner2"
+                    android:layout_width="180dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="45dp"
+                    android:layout_marginEnd="44dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="text"
-                    android:text="7."
-                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_7"
-                    app:layout_constraintTop_toBottomOf="@+id/inMove1_6"
+                    android:text="1."
+                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_1"
+                    app:layout_constraintTop_toBottomOf="@+id/workoutSpinner"
                     tools:ignore="LabelFor" />
 
-                <EditText
-                    android:id="@+id/inMove1_3"
-                    android:layout_width="90dp"
+                <Spinner
+                    android:id="@+id/workoutSpinner3"
+                    android:layout_width="180dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="45dp"
+                    android:layout_marginEnd="44dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="text"
-                    android:text="3."
-                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_3"
-                    app:layout_constraintTop_toBottomOf="@+id/inMove1_2"
+                    android:text="1."
+                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_1"
+                    app:layout_constraintTop_toBottomOf="@+id/workoutSpinner2"
                     tools:ignore="LabelFor" />
 
-                <EditText
-                    android:id="@+id/inMove1_5"
-                    android:layout_width="90dp"
+                <Spinner
+                    android:id="@+id/workoutSpinner4"
+                    android:layout_width="180dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="45dp"
+                    android:layout_marginEnd="44dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="text"
-                    android:text="5."
-                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_5"
-                    app:layout_constraintTop_toBottomOf="@+id/inMove1_4"
+                    android:text="1."
+                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_1"
+                    app:layout_constraintTop_toBottomOf="@+id/workoutSpinner3"
                     tools:ignore="LabelFor" />
 
-                <EditText
-                    android:id="@+id/inMove1_8"
-                    android:layout_width="90dp"
+                <Spinner
+                    android:id="@+id/workoutSpinner5"
+                    android:layout_width="180dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="45dp"
+                    android:layout_marginEnd="44dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="text"
-                    android:text="8."
-                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_8"
-                    app:layout_constraintTop_toBottomOf="@+id/inMove1_7"
+                    android:text="1."
+                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_1"
+                    app:layout_constraintTop_toBottomOf="@+id/workoutSpinner4"
                     tools:ignore="LabelFor" />
 
-                <EditText
-                    android:id="@+id/inMove1_9"
-                    android:layout_width="90dp"
+                <Spinner
+                    android:id="@+id/workoutSpinner6"
+                    android:layout_width="180dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="45dp"
+                    android:layout_marginEnd="44dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="text"
-                    android:text="9."
-                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_9"
-                    app:layout_constraintTop_toBottomOf="@+id/inMove1_8"
+                    android:text="1."
+                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_1"
+                    app:layout_constraintTop_toBottomOf="@+id/workoutSpinner5"
                     tools:ignore="LabelFor" />
 
-                <EditText
-                    android:id="@+id/inMove1_6"
-                    android:layout_width="90dp"
+                <Spinner
+                    android:id="@+id/workoutSpinner7"
+                    android:layout_width="180dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="45dp"
+                    android:layout_marginEnd="44dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="text"
-                    android:text="6."
-                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_6"
-                    app:layout_constraintTop_toBottomOf="@+id/inMove1_5"
+                    android:text="1."
+                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_1"
+                    app:layout_constraintTop_toBottomOf="@+id/workoutSpinner6"
                     tools:ignore="LabelFor" />
 
-                <EditText
-                    android:id="@+id/inMove1_4"
-                    android:layout_width="90dp"
+
+                <Spinner
+                    android:id="@+id/workoutSpinner8"
+                    android:layout_width="180dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="45dp"
+                    android:layout_marginEnd="44dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="text"
-                    android:text="4."
-                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_4"
-                    app:layout_constraintTop_toBottomOf="@+id/inMove1_3"
+                    android:text="1."
+                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_1"
+                    app:layout_constraintTop_toBottomOf="@+id/workoutSpinner7"
                     tools:ignore="LabelFor" />
 
-                <EditText
-                    android:id="@+id/inMove1_2"
-                    android:layout_width="90dp"
+                <Spinner
+                    android:id="@+id/workoutSpinner9"
+                    android:layout_width="180dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="45dp"
+                    android:layout_marginEnd="44dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="text"
-                    android:text="2."
-                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_2"
-                    app:layout_constraintTop_toBottomOf="@+id/inMove1_1"
+                    android:text="1."
+                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_1"
+                    app:layout_constraintTop_toBottomOf="@+id/workoutSpinner8"
+                    tools:ignore="LabelFor" />
+
+                <Spinner
+                    android:id="@+id/workoutSpinner10"
+                    android:layout_width="180dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="44dp"
+                    android:ems="10"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text="1."
+                    app:layout_constraintEnd_toStartOf="@+id/inWeight1_1"
+                    app:layout_constraintTop_toBottomOf="@+id/workoutSpinner9"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_1"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -248,13 +217,14 @@
                     android:inputType="number"
                     android:text="W. 1"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_2"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -262,13 +232,14 @@
                     android:inputType="number"
                     android:text="W. 2"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inWeight1_1"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_3"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -276,14 +247,14 @@
                     android:inputType="number"
                     android:text="W. 3"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inWeight1_2"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_4"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -291,14 +262,14 @@
                     android:inputType="number"
                     android:text="W. 4"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inWeight1_3"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_5"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -306,14 +277,14 @@
                     android:inputType="number"
                     android:text="W. 5"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inWeight1_4"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_6"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -321,14 +292,14 @@
                     android:inputType="number"
                     android:text="W. 6"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inWeight1_5"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_7"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -336,14 +307,14 @@
                     android:inputType="number"
                     android:text="W. 7"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inWeight1_6"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_8"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -351,14 +322,14 @@
                     android:inputType="number"
                     android:text="W. 8"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inWeight1_7"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_9"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -366,14 +337,14 @@
                     android:inputType="number"
                     android:text="W. 9"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inWeight1_8"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inWeight1_10"
-                    android:layout_width="90dp"
+                    android:layout_width="40dp"
                     android:layout_height="52dp"
                     android:layout_marginTop="16dp"
                     android:ems="10"
@@ -381,14 +352,14 @@
                     android:inputType="number"
                     android:text="W. 10"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.663"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/inWeight1_9"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_1"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -396,13 +367,14 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 1"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_1"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_8"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -410,13 +382,14 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 8"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_8"
                     app:layout_constraintTop_toBottomOf="@+id/inReps1_7"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_10"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -424,13 +397,14 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 10"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_10"
                     app:layout_constraintTop_toBottomOf="@+id/inReps1_9"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_9"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -438,13 +412,14 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 9"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_9"
                     app:layout_constraintTop_toBottomOf="@+id/inReps1_8"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_3"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -452,13 +427,14 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 3"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_3"
                     app:layout_constraintTop_toBottomOf="@+id/inReps1_2"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_4"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -466,13 +442,14 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 4"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_4"
                     app:layout_constraintTop_toBottomOf="@+id/inReps1_3"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_5"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -480,13 +457,14 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 5"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_5"
                     app:layout_constraintTop_toBottomOf="@+id/inReps1_4"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_6"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -494,13 +472,14 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 6"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_6"
                     app:layout_constraintTop_toBottomOf="@+id/inReps1_5"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_7"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -508,13 +487,14 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 7"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_7"
                     app:layout_constraintTop_toBottomOf="@+id/inReps1_6"
                     tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/inReps1_2"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="52dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
@@ -522,6 +502,7 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:text="R. 2"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/inWeight1_2"
                     app:layout_constraintTop_toBottomOf="@+id/inReps1_1"
                     tools:ignore="LabelFor" />

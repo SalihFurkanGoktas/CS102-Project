@@ -3,6 +3,7 @@ package com.example.cs_102_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -43,6 +44,21 @@ public class MainActivity extends AppCompatActivity {
     public void navigateToTrackingPage(View view)
     {
         Intent intent = new Intent(this, StreakActivity.class);
+        startActivity(intent);
+    }
+
+    public void navigateToExercisePage(View view)
+    {
+        Intent intent = new Intent(this, WorkoutActivity.class);
+        startActivity(intent);
+    }
+
+    public void learnMuscles(View view)
+    {
+        String url = "https://www.youtube.com/watch?v=2tM1LFFxeKg";
+        Uri uri = Uri.parse(url);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
 

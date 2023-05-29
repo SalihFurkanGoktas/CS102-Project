@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -108,16 +110,7 @@ public class workout_1 extends Fragment implements View.OnClickListener {
 
     public void initMoveWeightRep(View view) {
 
-        inMove1 = view.findViewById(R.id.inMove1_1);
-        inMove2 = view.findViewById(R.id.inMove1_2);
-        inMove3 = view.findViewById(R.id.inMove1_3);
-        inMove4 = view.findViewById(R.id.inMove1_4);
-        inMove5 = view.findViewById(R.id.inMove1_5);
-        inMove6 = view.findViewById(R.id.inMove1_6);
-        inMove7 = view.findViewById(R.id.inMove1_7);
-        inMove8 = view.findViewById(R.id.inMove1_8);
-        inMove9 = view.findViewById(R.id.inMove1_9);
-        inMove10 = view.findViewById(R.id.inMove1_10);
+
 
         inWeight1 = view.findViewById(R.id.inWeight1_1);
         inWeight2 = view.findViewById(R.id.inWeight1_2);
@@ -141,6 +134,30 @@ public class workout_1 extends Fragment implements View.OnClickListener {
         inReps9 = view.findViewById(R.id.inReps1_9);
         inReps10 = view.findViewById(R.id.inReps1_10);
 
+        Spinner spinner1 = view.findViewById(R.id.workoutSpinner);
+        Spinner spinner2 = view.findViewById(R.id.workoutSpinner2);
+        Spinner spinner3 = view.findViewById(R.id.workoutSpinner3);
+        Spinner spinner4 = view.findViewById(R.id.workoutSpinner4);
+        Spinner spinner5 = view.findViewById(R.id.workoutSpinner5);
+        Spinner spinner6 = view.findViewById(R.id.workoutSpinner6);
+        Spinner spinner7 = view.findViewById(R.id.workoutSpinner7);
+        Spinner spinner8 = view.findViewById(R.id.workoutSpinner8);
+        Spinner spinner9 = view.findViewById(R.id.workoutSpinner9);
+        Spinner spinner10 = view.findViewById(R.id.workoutSpinner10);
 
+
+        ArrayAdapter<CharSequence> workoutAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.workout_array, android.R.layout.simple_spinner_item);
+        workoutAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner1.setAdapter(workoutAdapter);
+        spinner2.setAdapter(workoutAdapter);
+        spinner3.setAdapter(workoutAdapter);
+        spinner4.setAdapter(workoutAdapter);
+        spinner5.setAdapter(workoutAdapter);
+        spinner6.setAdapter(workoutAdapter);
+        spinner7.setAdapter(workoutAdapter);
+        spinner8.setAdapter(workoutAdapter);
+        spinner9.setAdapter(workoutAdapter);
+        spinner10.setAdapter(workoutAdapter);
     }
 }

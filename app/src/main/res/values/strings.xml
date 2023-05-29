@@ -2,4 +2,19 @@
     <string name="app_name">CS_102_Project</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="exercise_array">
+        <item>Exercise 1</item>
+        <item>Exercise 2</item>
+        <item>Exercise 3</item>
+    </string-array>
+
+    <string-array name="workout_array">
+        <item>Choose an Exercise</item>
+        <item>Chest Press - 4</item>
+        <item>Triceps Press - 8</item>
+        <item>Arm Curl - 7</item>
+        <item>Bench Press</item>
+    </string-array>
+
 </resources>
