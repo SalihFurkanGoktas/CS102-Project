@@ -15,6 +15,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.cs_102_project.data.Database;
+import com.example.cs_102_project.data.WTable_1_Dao;
+import com.example.cs_102_project.data.WorkoutDatabase;
+import com.example.cs_102_project.data.WorkoutTable_1;
+
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -28,8 +33,14 @@ public class workout_1 extends Fragment implements View.OnClickListener {
     private EditText inWeight1, inWeight2, inWeight3, inWeight4, inWeight5, inWeight6, inWeight7, inWeight8, inWeight9, inWeight10;
     private EditText inReps1, inReps2, inReps3, inReps4, inReps5, inReps6, inReps7, inReps8, inReps9, inReps10;
 
-    private Button submitBtn;
+    private int submitPressCounter;
+    private WorkoutTable_1 wTable1;
 
+    private WorkoutDatabase workoutDB;
+
+    private WTable_1_Dao wTable1Dao;
+
+    private Button submitBtn;
     private Button finishBtn;
     private Button backBtn;
 
@@ -101,12 +112,29 @@ public class workout_1 extends Fragment implements View.OnClickListener {
 
         initMoveWeightRep(view);
 
+        workoutDB = Database.getInstance(getContext().getApplicationContext());
+
+        wTable1 = new WorkoutTable_1(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+        wTable1Dao = workoutDB.W1Dao();
+
+        submitPressCounter = 0;
+
         submitBtn = view.findViewById(R.id.submitBtn1);
 
         finishBtn = view.findViewById(R.id.finishBtn1);
 
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                submitPressCounter++;
+                insertIntoDB();
+            }
+        });
 
         finishBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 MainSharedPref.saveStreak(MainSharedPref.loadStreak() + 1);
@@ -164,5 +192,24 @@ public class workout_1 extends Fragment implements View.OnClickListener {
         spinner8.setAdapter(workoutAdapter);
         spinner9.setAdapter(workoutAdapter);
         spinner10.setAdapter(workoutAdapter);
+    }
+
+    public int HandleZeroLength(EditText textField) {
+        if (textField.getText().toString().length() == 0)
+            return 0;
+
+        return Integer.parseInt(textField.getText().toString());
+    }
+
+    public void insertIntoDB() {
+
+        switch (submitPressCounter)
+        {
+            case 1:
+                wTable1Dao.addWork1(wTable1);
+
+
+        }
+
     }
 }
