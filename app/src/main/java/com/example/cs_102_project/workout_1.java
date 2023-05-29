@@ -79,9 +79,9 @@ public class workout_1 extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_workout_1, container, false);
 
-//          backBtn = view.findViewById(R.id.backBtn);
-//
-//        backBtn.setOnClickListener(this);
+        backBtn = view.findViewById(R.id.backBtn1);
+
+        backBtn.setOnClickListener(this);
 
         return view;
     }
@@ -116,8 +116,6 @@ public class workout_1 extends Fragment implements View.OnClickListener {
     }
 
     public void initMoveWeightRep(View view) {
-
-
 
         inWeight1 = view.findViewById(R.id.inWeight1_1);
         inWeight2 = view.findViewById(R.id.inWeight1_2);

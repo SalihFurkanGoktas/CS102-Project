@@ -69,6 +69,12 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
+            android:id="@+id/backBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
             android:id="@+id/finishBtn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

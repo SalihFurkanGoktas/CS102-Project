@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     private void bottomNavButtonManagement()
     {
         mapSwitch = findViewById(R.id.Main_toMap);
