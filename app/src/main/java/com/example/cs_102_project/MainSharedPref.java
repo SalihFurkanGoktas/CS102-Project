@@ -53,6 +53,13 @@ public class MainSharedPref {
     }
 
     public static void saveGymSelection(int aGymSelection) {
+        if (loadIsExercising() == true)
+        {
+            MainSharedPref.decrementGymCount();
+            MainSharedPref.saveIsExercising(false);
+        }
+
+
         SharedPreferences.Editor editor = instanceSharedPref.edit();
         editor.putInt(GYM_SELECT_KEY, aGymSelection);
         editor.apply();

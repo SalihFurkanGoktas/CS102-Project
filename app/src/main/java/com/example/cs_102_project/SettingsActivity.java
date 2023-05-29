@@ -20,7 +20,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
     //Settings Menu Buttons
-    private Button resetStreakButton;
+    private Button resetStreakButton, resetGymButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,14 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 MainSharedPref.saveStreak(0);
+            }
+        });
+        resetGymButton = findViewById(R.id.resetGymButton);
+        resetGymButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                MainSharedPref.saveGymSelection(3);
             }
         });
     }

@@ -9,19 +9,35 @@
 
     <Button
         android:id="@+id/resetStreakButton"
-        android:layout_width="261dp"
-        android:layout_height="80dp"
+        android:layout_width="220dp"
+        android:layout_height="65dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="Reset Streak"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="26dp"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/resetGymButton"
+        android:layout_width="270dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Reset Gym Selection"
+        android:textColor="@color/black"
+        android:textSize="26dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetStreakButton" />
 
     <TextView
         android:id="@+id/textView"
@@ -30,8 +46,8 @@
         android:fontFamily="sans-serif-condensed-medium"
         android:text="  Settings"
         android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="42sp"
+        android:textColor="@color/white"
+        android:textSize="46sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />

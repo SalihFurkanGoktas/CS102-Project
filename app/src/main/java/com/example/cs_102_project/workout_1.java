@@ -103,17 +103,43 @@ public class workout_1 extends Fragment implements View.OnClickListener {
 
         submitBtn = view.findViewById(R.id.submitBtn1);
 
+        finishButtonManagement(view);
+
+    }
+
+    public void finishButtonManagement(View view)
+    {
         finishBtn = view.findViewById(R.id.finishBtn1);
+
+        if (MainSharedPref.loadIsExercising() == false)
+        {
+            finishBtn.setText("Start");
+        }
+        else
+        {
+            finishBtn.setText("Stop");
+        }
+
 
 
         finishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainSharedPref.saveStreak(MainSharedPref.loadStreak() + 1);
-                MainSharedPref.incrementGymCount();
+                if (MainSharedPref.loadIsExercising() == false)
+                {
+                    MainSharedPref.saveStreak(MainSharedPref.loadStreak() + 1);
+                    MainSharedPref.incrementGymCount();
+                    MainSharedPref.saveIsExercising(true);
+                    finishBtn.setText("Stop");
+                }
+                else
+                {
+                    MainSharedPref.decrementGymCount();
+                    MainSharedPref.saveIsExercising(false);
+                    finishBtn.setText("Start");
+                }
             }
         });
-
     }
 
     public void initMoveWeightRep(View view) {
