@@ -17,61 +17,19 @@ import androidx.navigation.Navigation;
 
 import org.jetbrains.annotations.Nullable;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link workout_1#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class workout_1 extends Fragment implements View.OnClickListener {
 
-    private TextView inMove1, inMove2, inMove3, inMove4, inMove5, inMove6, inMove7, inMove8, inMove9, inMove10;
+    private Spinner inSpinner1, inSpinner2, inSpinner3, inSpinner4, inSpinner5, inSpinner6, inSpinner7, inSpinner8, inSpinner9, inSpinner10;
     private EditText inWeight1, inWeight2, inWeight3, inWeight4, inWeight5, inWeight6, inWeight7, inWeight8, inWeight9, inWeight10;
     private EditText inReps1, inReps2, inReps3, inReps4, inReps5, inReps6, inReps7, inReps8, inReps9, inReps10;
+    private Button submitBtn, finishBtn, backBtn;
 
-    private Button submitBtn;
-
-    private Button finishBtn;
-    private Button backBtn;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public workout_1() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment workout_1.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static workout_1 newInstance(String param1, String param2) {
-        workout_1 fragment = new workout_1();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -166,30 +124,30 @@ public class workout_1 extends Fragment implements View.OnClickListener {
         inReps9 = view.findViewById(R.id.inReps1_9);
         inReps10 = view.findViewById(R.id.inReps1_10);
 
-        Spinner spinner1 = view.findViewById(R.id.workoutSpinner1_1);
-        Spinner spinner2 = view.findViewById(R.id.workoutSpinner1_2);
-        Spinner spinner3 = view.findViewById(R.id.workoutSpinner1_3);
-        Spinner spinner4 = view.findViewById(R.id.workoutSpinner1_4);
-        Spinner spinner5 = view.findViewById(R.id.workoutSpinner1_5);
-        Spinner spinner6 = view.findViewById(R.id.workoutSpinner1_6);
-        Spinner spinner7 = view.findViewById(R.id.workoutSpinner1_7);
-        Spinner spinner8 = view.findViewById(R.id.workoutSpinner1_8);
-        Spinner spinner9 = view.findViewById(R.id.workoutSpinner1_9);
-        Spinner spinner10 = view.findViewById(R.id.workoutSpinner1_10);
+        inSpinner1 = view.findViewById(R.id.workoutSpinner1_1);
+        inSpinner2 = view.findViewById(R.id.workoutSpinner1_2);
+        inSpinner3 = view.findViewById(R.id.workoutSpinner1_3);
+        inSpinner4 = view.findViewById(R.id.workoutSpinner1_4);
+        inSpinner5 = view.findViewById(R.id.workoutSpinner1_5);
+        inSpinner6 = view.findViewById(R.id.workoutSpinner1_6);
+        inSpinner7 = view.findViewById(R.id.workoutSpinner1_7);
+        inSpinner8 = view.findViewById(R.id.workoutSpinner1_8);
+        inSpinner9 = view.findViewById(R.id.workoutSpinner1_9);
+        inSpinner10 = view.findViewById(R.id.workoutSpinner1_10);
 
 
         ArrayAdapter<CharSequence> workoutAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.workout_array, android.R.layout.simple_spinner_item);
         workoutAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinner1.setAdapter(workoutAdapter);
-        spinner2.setAdapter(workoutAdapter);
-        spinner3.setAdapter(workoutAdapter);
-        spinner4.setAdapter(workoutAdapter);
-        spinner5.setAdapter(workoutAdapter);
-        spinner6.setAdapter(workoutAdapter);
-        spinner7.setAdapter(workoutAdapter);
-        spinner8.setAdapter(workoutAdapter);
-        spinner9.setAdapter(workoutAdapter);
-        spinner10.setAdapter(workoutAdapter);
+        inSpinner1.setAdapter(workoutAdapter);
+        inSpinner2.setAdapter(workoutAdapter);
+        inSpinner3.setAdapter(workoutAdapter);
+        inSpinner4.setAdapter(workoutAdapter);
+        inSpinner5.setAdapter(workoutAdapter);
+        inSpinner6.setAdapter(workoutAdapter);
+        inSpinner7.setAdapter(workoutAdapter);
+        inSpinner8.setAdapter(workoutAdapter);
+        inSpinner9.setAdapter(workoutAdapter);
+        inSpinner10.setAdapter(workoutAdapter);
     }
 }
