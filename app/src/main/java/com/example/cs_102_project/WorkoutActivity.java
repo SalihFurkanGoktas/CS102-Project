@@ -1,5 +1,6 @@
 package com.example.cs_102_project;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -136,6 +137,8 @@ public class WorkoutActivity extends AppCompatActivity {
             public void onClick(View view) { switchActivity(settingsSwitch); }
         });
     }
+
+
 
 
 

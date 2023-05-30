@@ -13,6 +13,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
+        <Button
+            android:id="@+id/showInfoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="328dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:onClick="onClick"
+            android:text="Learn More"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#000000" />
+
+
         <Button
             android:id="@+id/buttonW1"
             android:layout_width="wrap_content"
@@ -57,6 +76,8 @@
             app:cornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonW1" />
+
+
 
         <Button
             android:id="@+id/buttonW4"
