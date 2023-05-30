@@ -54,6 +54,7 @@ public class StreakActivity extends AppCompatActivity {
         streak = MainSharedPref.loadStreak();
         updateStreakTextView();
         displayCrosses();
+        showRewards();
     }
 
     public void completeSession(View view)
@@ -96,10 +97,9 @@ public class StreakActivity extends AppCompatActivity {
         streak++;
 
 
-        if (streak % 7 == 0)
-        {
-            showRewards(); // Display rewards when a week is completed
-        }
+
+        showRewards(); // Display rewards when a week is completed
+
 
         MainSharedPref.saveStreak(streak);
         updateStreakTextView();
@@ -179,11 +179,11 @@ public class StreakActivity extends AppCompatActivity {
 
 
         if (streakCount >= 7) {
-            rewardImage = R.drawable.trophy;
+            rewardImage = R.drawable.alttrophy;
         }
 
         else
-            rewardImage = R.drawable.trophy;
+            rewardImage = R.drawable.alttrophy;
 
 
         return rewardImage;
