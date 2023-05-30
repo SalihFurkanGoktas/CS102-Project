@@ -23,6 +23,9 @@ public class StreakActivity extends AppCompatActivity {
 
     private int streak = 0;
     private GridLayout gridCrosses;
+
+    private GridLayout gridRewards;
+
     private int imagesPerRow = 1; //?????? SHOULD WORK WHEN IT'S 7 BUT ONLY WORKS WHEN IT'S 1  DON'T TOUCH THIS
     private int currentRow = 0;
     private long lastExerciseTimestamp = 0; //To see when exactly the user last exercised.
@@ -44,6 +47,8 @@ public class StreakActivity extends AppCompatActivity {
         bottomNavButtonManagement();
 
         gridCrosses = findViewById(R.id.gridCrosses);
+
+        gridRewards = findViewById(R.id.gridRewards);
 
         MainSharedPref.streakManagement();
         streak = MainSharedPref.loadStreak();
@@ -70,6 +75,11 @@ public class StreakActivity extends AppCompatActivity {
         ImageView crossImageView = new ImageView(this);
         crossImageView.setImageResource(R.drawable.ic_cross_background);
 
+        ImageView rewardImageView = new ImageView(this);
+        int rewardImage = getRewardImage(streak);
+        rewardImageView.setImageResource(rewardImage);
+
+
         crossImageView.setScaleType(ImageView.ScaleType.FIT_XY);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imageWidth, imageHeight);
         layoutParams.setMargins(5, 5, 5, 5); // Add margin between crosses
@@ -85,6 +95,11 @@ public class StreakActivity extends AppCompatActivity {
 
         streak++;
 
+
+        if (streak % 7 == 0)
+        {
+            showRewards(); // Display rewards when a week is completed
+        }
 
         MainSharedPref.saveStreak(streak);
         updateStreakTextView();
@@ -123,6 +138,48 @@ public class StreakActivity extends AppCompatActivity {
 
             numCrosses--;
         }
+    }
+
+    private void showRewards() {
+        gridRewards.removeAllViews(); // Clear the rewards grid before displaying new rewards
+
+        int numRewards = streak / 7; // Calculate the number of rewards based on the streak
+
+        while (numRewards > 0) {
+            if (currentLinearLayout == null || currentLinearLayout.getChildCount() >= imagesPerRow) {
+                currentLinearLayout = new LinearLayout(this);
+                currentLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
+                gridRewards.addView(currentLinearLayout);
+                currentRow++;
+            }
+
+            ImageView rewardImageView = new ImageView(this);
+            rewardImageView.setImageResource(getRewardImage(numRewards)); // Get the appropriate reward image
+            rewardImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imageWidth, imageHeight);
+            layoutParams.setMargins(5, 5, 5, 5);
+            rewardImageView.setLayoutParams(layoutParams);
+
+            currentLinearLayout.addView(rewardImageView);
+
+            numRewards--;
+        }
+    }
+
+    private int getRewardImage(int streakCount) {
+
+        int rewardImage;
+
+
+        if (streakCount >= 7) {
+            rewardImage = R.drawable.trophy;
+        }
+
+        else
+            rewardImage = R.drawable.trophy;
+
+
+        return rewardImage;
     }
 
     public void reset(View view)
