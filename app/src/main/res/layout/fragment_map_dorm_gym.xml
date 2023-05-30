@@ -18,6 +18,26 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+        <View
+            android:id="@+id/view3"
+            android:layout_width="410dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="80dp"
+            android:background="@color/purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="410dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="380dp"
+            android:background="@color/purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/dormGymBackButton"
             android:layout_width="120dp"
@@ -36,10 +56,10 @@
             android:id="@+id/dormGymMemberCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:textColor="@color/white"
-            android:textSize="24sp"
+            android:layout_marginTop="210dp"
             android:text="PLACEHOLDER"
+            android:textColor="@color/white"
+            android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

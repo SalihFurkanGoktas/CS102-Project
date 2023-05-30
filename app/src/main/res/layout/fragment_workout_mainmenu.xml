@@ -15,30 +15,52 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+        <View
+            android:id="@+id/view"
+            android:layout_width="410dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="254dp"
+            android:background="@color/purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="364dp"
+            android:background="@color/purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/showInfoButton"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="328dp"
+            android:layout_marginTop="400dp"
             android:backgroundTint="@color/white"
             android:fontFamily="sans-serif-condensed-medium"
             android:onClick="onClick"
-            android:text="Learn More"
+            android:text="Exercise Info"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:strokeColor="#000000" />
-
 
         <Button
             android:id="@+id/buttonW1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="38dp"
             android:backgroundTint="@color/white"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Workout 1"
@@ -52,7 +74,7 @@
             android:id="@+id/buttonW2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="38dp"
             android:layout_marginEnd="50dp"
             android:backgroundTint="@color/white"
             android:fontFamily="sans-serif-condensed-medium"
@@ -128,7 +150,7 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="300dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -158,6 +180,32 @@
                 android:text="East Gym"
                 android:textColor="@color/white" />
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Workout Plans"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="268dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Gym Selection"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

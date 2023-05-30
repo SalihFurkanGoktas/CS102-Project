@@ -107,7 +107,14 @@ public class StreakActivity extends AppCompatActivity {
 
     private void updateStreakTextView() {
         TextView streakTextView = findViewById(R.id.streakTextView);
-        streakTextView.setText("Your Current Streak Count: " + streak);
+        if (streak == 0 )
+        {
+            streakTextView.setText("Start your streak by exercising!");
+        }
+        else
+        {
+            streakTextView.setText("Your Current Streak: " + streak);
+        }
     }
 
 
