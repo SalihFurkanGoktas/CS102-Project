@@ -45,6 +45,7 @@ public class StreakActivity extends AppCompatActivity {
 
         gridCrosses = findViewById(R.id.gridCrosses);
 
+        MainSharedPref.streakManagement();
         streak = MainSharedPref.loadStreak();
         updateStreakTextView();
         displayCrosses();
@@ -54,7 +55,7 @@ public class StreakActivity extends AppCompatActivity {
     {
 
 
-        long currentTimestamp = new Date().getTime();   //sees current time
+
 
 
         if (currentLinearLayout == null || currentLinearLayout.getChildCount() >= imagesPerRow) {
@@ -81,14 +82,6 @@ public class StreakActivity extends AppCompatActivity {
             currentLinearLayout = null;
         }
 
-        lastExerciseTimestamp = currentTimestamp;
-        // Check if it's been more than 24 hours since the last exercise TODO 86400000
-
-
-        if (currentTimestamp - lastExerciseTimestamp >= 86400000)
-        {
-            streak = 0; // Reset streak to zero
-        }
 
         streak++;
 
@@ -102,16 +95,7 @@ public class StreakActivity extends AppCompatActivity {
         streakTextView.setText("Your Current Streak Count: " + streak);
     }
 
-//    private void saveStreak() {
-//        SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
-//        editor.putInt(STREAK_KEY, streak);
-//        editor.apply();
-//    }
-//
-//    private void loadStreak() {
-//        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-//        streak = prefs.getInt(STREAK_KEY, 0);
-//    }
+
 
     private void displayCrosses()
     {
