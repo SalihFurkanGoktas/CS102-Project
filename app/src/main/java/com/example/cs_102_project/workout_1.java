@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -19,7 +18,11 @@ import androidx.navigation.Navigation;
 import com.example.cs_102_project.data.WTable_1_Dao;
 import com.example.cs_102_project.data.WorkoutDatabase;
 import com.example.cs_102_project.data.WorkoutTable_1;
+import com.google.android.gms.common.annotation.NonNullApi;
+import androidx.annotation.NonNull;
 
+
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 
@@ -67,7 +70,7 @@ public class workout_1 extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) { //@NonNull View view
 
         initMoveWeightRep(view);
 
@@ -188,61 +191,61 @@ public class workout_1 extends Fragment implements View.OnClickListener {
     public void insertIntoDB() {
 
         if (pairIsValid(inWeight1, inReps1)) {
-            WRow1 = new WorkoutTable_1(0, 1, getInt(inWeight1), getInt(inReps1));
+            WRow1 = new WorkoutTable_1(0, inSpinner1.getSelectedItem().toString(), 1, getInt(inWeight1), getInt(inReps1));
             wTable1Dao.addWork(WRow1);
             inWeight1.setHint(null);
             inReps1.setHint(null);
         }
         if (pairIsValid(inWeight2, inReps2)) {
-            WRow2 = new WorkoutTable_1(0, 2, getInt(inWeight2), getInt(inReps2));
+            WRow2 = new WorkoutTable_1(0, inSpinner2.getSelectedItem().toString(), 2, getInt(inWeight2), getInt(inReps2));
             wTable1Dao.addWork(WRow2);
             inWeight2.setHint(null);
             inReps2.setHint(null);
         }
         if (pairIsValid(inWeight3, inReps3)) {
-            WRow3 = new WorkoutTable_1(0, 3, getInt(inWeight3), getInt(inReps3));
+            WRow3 = new WorkoutTable_1(0, inSpinner3.getSelectedItem().toString(), 3, getInt(inWeight3), getInt(inReps3));
             wTable1Dao.addWork(WRow3);
             inWeight3.setHint(null);
             inReps3.setHint(null);
         }
         if (pairIsValid(inWeight4, inReps4)) {
-            WRow4 = new WorkoutTable_1(0, 4, getInt(inWeight4), getInt(inReps4));
+            WRow4 = new WorkoutTable_1(0, inSpinner4.getSelectedItem().toString(), 4, getInt(inWeight4), getInt(inReps4));
             wTable1Dao.addWork(WRow4);
             inWeight4.setHint(null);
             inReps4.setHint(null);
         }
         if (pairIsValid(inWeight5, inReps5)) {
-            WRow5 = new WorkoutTable_1(0, 5, getInt(inWeight5), getInt(inReps5));
+            WRow5 = new WorkoutTable_1(0, inSpinner5.getSelectedItem().toString(),5, getInt(inWeight5), getInt(inReps5));
             wTable1Dao.addWork(WRow5);
             inWeight5.setHint(null);
             inReps5.setHint(null);
         }
         if (pairIsValid(inWeight6, inReps6)) {
-            WRow6 = new WorkoutTable_1(0, 6, getInt(inWeight6), getInt(inReps6));
+            WRow6 = new WorkoutTable_1(0, inSpinner6.getSelectedItem().toString(),6, getInt(inWeight6), getInt(inReps6));
             wTable1Dao.addWork(WRow6);
             inWeight6.setHint(null);
             inReps6.setHint(null);
         }
         if (pairIsValid(inWeight7, inReps7)) {
-            WRow7 = new WorkoutTable_1(0, 7, getInt(inWeight7), getInt(inReps7));
+            WRow7 = new WorkoutTable_1(0, inSpinner7.getSelectedItem().toString(),7, getInt(inWeight7), getInt(inReps7));
             wTable1Dao.addWork(WRow7);
             inWeight7.setHint(null);
             inReps7.setHint(null);
         }
         if (pairIsValid(inWeight8, inReps8)) {
-            WRow8 = new WorkoutTable_1(0, 8, getInt(inWeight8), getInt(inReps8));
+            WRow8 = new WorkoutTable_1(0, inSpinner8.getSelectedItem().toString(),8, getInt(inWeight8), getInt(inReps8));
             wTable1Dao.addWork(WRow8);
             inWeight8.setHint(null);
             inReps8.setHint(null);
         }
         if (pairIsValid(inWeight9, inReps9)) {
-            WRow9 = new WorkoutTable_1(0, 9, getInt(inWeight9), getInt(inReps9));
+            WRow9 = new WorkoutTable_1(0, inSpinner9.getSelectedItem().toString(), 9, getInt(inWeight9), getInt(inReps9));
             wTable1Dao.addWork(WRow9);
             inWeight9.setHint(null);
             inReps9.setHint(null);
         }
         if (pairIsValid(inWeight10, inReps10)) {
-            WRow10 = new WorkoutTable_1(0, 10, getInt(inWeight10), getInt(inReps10));
+            WRow10 = new WorkoutTable_1(0, inSpinner10.getSelectedItem().toString(),10, getInt(inWeight10), getInt(inReps10));
             wTable1Dao.addWork(WRow10);
             inWeight10.setHint(null);
             inReps10.setHint(null);
