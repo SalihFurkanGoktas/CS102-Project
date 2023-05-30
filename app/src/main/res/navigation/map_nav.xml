@@ -13,9 +13,35 @@
         <action
             android:id="@+id/action_mapFragment_MapScreen_to_map_dormGym"
             app:destination="@id/map_dormGym" />
+        <action
+            android:id="@+id/action_mapFragment_MapScreen_to_map_eastGym"
+            app:destination="@id/map_eastGym" />
+        <action
+            android:id="@+id/action_mapFragment_MapScreen_to_map_mainGym"
+            app:destination="@id/map_mainGym" />
     </fragment>
     <fragment
         android:id="@+id/map_dormGym"
         android:name="com.example.cs_102_project.map_dormGym"
-        android:label="map_dormGym" />
+        android:label="map_dormGym" >
+        <action
+            android:id="@+id/action_map_dormGym_to_mapFragment_MapScreen"
+            app:destination="@id/mapFragment_MapScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/map_mainGym"
+        android:name="com.example.cs_102_project.map_mainGym"
+        android:label="map_mainGym" >
+        <action
+            android:id="@+id/action_map_mainGym_to_mapFragment_MapScreen"
+            app:destination="@id/mapFragment_MapScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/map_eastGym"
+        android:name="com.example.cs_102_project.map_eastGym"
+        android:label="map_eastGym" >
+        <action
+            android:id="@+id/action_map_eastGym_to_mapFragment_MapScreen"
+            app:destination="@id/mapFragment_MapScreen" />
+    </fragment>
 </navigation>

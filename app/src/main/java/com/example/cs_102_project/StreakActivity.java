@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -21,8 +22,13 @@ public class StreakActivity extends AppCompatActivity {
     private ImageButton streakSwitch;
     private ImageButton settingsSwitch;
 
+    private Button rewardButton;
+
     private int streak = 0;
     private GridLayout gridCrosses;
+
+    private GridLayout gridRewards;
+
     private int imagesPerRow = 1; //?????? SHOULD WORK WHEN IT'S 7 BUT ONLY WORKS WHEN IT'S 1  DON'T TOUCH THIS
     private int currentRow = 0;
     private long lastExerciseTimestamp = 0; //To see when exactly the user last exercised.
@@ -43,18 +49,30 @@ public class StreakActivity extends AppCompatActivity {
 
         bottomNavButtonManagement();
 
+        rewardButton = findViewById(R.id.extendButton);
+
         gridCrosses = findViewById(R.id.gridCrosses);
 
+        gridRewards = findViewById(R.id.gridRewards);
+
+        MainSharedPref.streakManagement();
         streak = MainSharedPref.loadStreak();
         updateStreakTextView();
         displayCrosses();
+        showRewards();
+        if (streak >= 7) {
+            rewardButton.setText("Rewards");
+        }
+        else {
+            rewardButton.setText("");
+        }
     }
 
     public void completeSession(View view)
     {
 
 
-        long currentTimestamp = new Date().getTime();   //sees current time
+
 
 
         if (currentLinearLayout == null || currentLinearLayout.getChildCount() >= imagesPerRow) {
@@ -69,6 +87,11 @@ public class StreakActivity extends AppCompatActivity {
         ImageView crossImageView = new ImageView(this);
         crossImageView.setImageResource(R.drawable.ic_cross_background);
 
+        ImageView rewardImageView = new ImageView(this);
+        int rewardImage = getRewardImage(streak);
+        rewardImageView.setImageResource(rewardImage);
+
+
         crossImageView.setScaleType(ImageView.ScaleType.FIT_XY);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imageWidth, imageHeight);
         layoutParams.setMargins(5, 5, 5, 5); // Add margin between crosses
@@ -81,16 +104,18 @@ public class StreakActivity extends AppCompatActivity {
             currentLinearLayout = null;
         }
 
-        lastExerciseTimestamp = currentTimestamp;
-        // Check if it's been more than 24 hours since the last exercise TODO 86400000
-
-
-        if (currentTimestamp - lastExerciseTimestamp >= 86400000)
-        {
-            streak = 0; // Reset streak to zero
-        }
 
         streak++;
+
+
+
+        showRewards(); // Display rewards when a week is completed
+        if (streak >= 7) {
+            rewardButton.setText("Rewards");
+        }
+        else {
+            rewardButton.setText("");
+        }
 
 
         MainSharedPref.saveStreak(streak);
@@ -99,19 +124,17 @@ public class StreakActivity extends AppCompatActivity {
 
     private void updateStreakTextView() {
         TextView streakTextView = findViewById(R.id.streakTextView);
-        streakTextView.setText("Your Current Streak Count: " + streak);
+        if (streak == 0 )
+        {
+            streakTextView.setText("Start your streak by exercising!");
+        }
+        else
+        {
+            streakTextView.setText("Your Current Streak: " + streak);
+        }
     }
 
-//    private void saveStreak() {
-//        SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
-//        editor.putInt(STREAK_KEY, streak);
-//        editor.apply();
-//    }
-//
-//    private void loadStreak() {
-//        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-//        streak = prefs.getInt(STREAK_KEY, 0);
-//    }
+
 
     private void displayCrosses()
     {
@@ -139,6 +162,51 @@ public class StreakActivity extends AppCompatActivity {
 
             numCrosses--;
         }
+    }
+
+    private void showRewards() {
+        gridRewards.removeAllViews(); // Clear the rewards grid before displaying new rewards
+
+        int numRewards = streak / 7; // Calculate the number of rewards based on the streak
+
+        while (numRewards > 0) {
+            if (currentLinearLayout == null || currentLinearLayout.getChildCount() >= imagesPerRow) {
+                currentLinearLayout = new LinearLayout(this);
+                currentLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
+                gridRewards.addView(currentLinearLayout);
+                currentRow++;
+            }
+
+            ImageView rewardImageView = new ImageView(this);
+            rewardImageView.setImageResource(getRewardImage(numRewards)); // Get the appropriate reward image
+            rewardImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imageWidth, imageHeight);
+            layoutParams.setMargins(5, 5, 5, 5);
+            rewardImageView.setLayoutParams(layoutParams);
+
+            currentLinearLayout.addView(rewardImageView);
+
+            numRewards--;
+        }
+    }
+
+    private int getRewardImage(int streakCount) {
+
+        int rewardImage;
+
+
+        if (streakCount >= 7) {
+            rewardImage = R.drawable.alttrophy;
+
+        }
+
+        else {
+            rewardImage = R.drawable.alttrophy;
+
+        }
+
+
+        return rewardImage;
     }
 
     public void reset(View view)

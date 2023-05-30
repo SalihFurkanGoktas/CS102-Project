@@ -3,10 +3,12 @@ package com.example.cs_102_project;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,9 +18,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class map_dormGym extends Fragment {
 
-    private TextView placeHold;
-    private TextView placeHold2;
-    private TextView placeHold3;
+    private TextView dormGymMembers;
+    private Button dormGymBackButton;
+
+    private static final int dormGymMaxCount = 250;
+
 
 
 
@@ -32,13 +36,22 @@ public class map_dormGym extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_map_dorm_gym, container, false);
-        placeHold = view.findViewById(R.id.placeHoldTest);
-        placeHold.setText(String.valueOf(MainSharedPref.loadGymDorm()));
-        placeHold = view.findViewById(R.id.placeHoldTest2);
-        placeHold.setText(String.valueOf(MainSharedPref.loadGymMain()));
-        placeHold = view.findViewById(R.id.placeHoldTest3);
-        placeHold.setText(String.valueOf(MainSharedPref.loadGymEast()));
+        dormGymMembers = view.findViewById(R.id.dormGymMemberCount);
+        dormGymMembers.setText("Capacity: " + MainSharedPref.loadGymDorm() + "/" + dormGymMaxCount);
+        backButtonManagement(view);
         return view;
+    }
+
+    public void backButtonManagement(View view)
+    {
+        dormGymBackButton = view.findViewById(R.id.dormGymBackButton);
+        dormGymBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_map_dormGym_to_mapFragment_MapScreen);
+            }
+        });
     }
 
 

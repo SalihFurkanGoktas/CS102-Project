@@ -12,41 +12,38 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class map_mainGym extends Fragment {
+public class map_eastGym extends Fragment {
 
+    private TextView eastGymMembers;
 
-    private TextView mainGymMembers;
+    private Button eastGymBackButton;
 
-    private Button mainGymBackButton;
+    private static final int eastGymMaxCount = 150;
 
-    private static final int mainGymMaxCount = 225;
-
-
-    public map_mainGym() {
+    public map_eastGym() {
         // Required empty public constructor
     }
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_map_main_gym, container, false);
-        mainGymMembers = view.findViewById(R.id.mainGymMemberCount);
-        mainGymMembers.setText("Capacity: " + MainSharedPref.loadGymMain() + "/" + mainGymMaxCount);
+        View view = inflater.inflate(R.layout.fragment_map_east_gym, container, false);
+        eastGymMembers = view.findViewById(R.id.eastGymMemberCount);
+        eastGymMembers.setText("Capacity: " + MainSharedPref.loadGymEast() + "/" + eastGymMaxCount);
         backButtonManagement(view);
         return view;
     }
 
     public void backButtonManagement(View view)
     {
-        mainGymBackButton = view.findViewById(R.id.mainGymBackButton);
-        mainGymBackButton.setOnClickListener(new View.OnClickListener() {
+        eastGymBackButton = view.findViewById(R.id.eastGymBackButton);
+        eastGymBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
-                Navigation.findNavController(view).navigate(R.id.action_map_mainGym_to_mapFragment_MapScreen);
+                Navigation.findNavController(view).navigate(R.id.action_map_eastGym_to_mapFragment_MapScreen);
             }
         });
     }

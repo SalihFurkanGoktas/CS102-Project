@@ -8,12 +8,16 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class MainSharedPref {
 
-
+    private static Calendar cal;
 
     private static DatabaseReference gymDormRef;
     private static DatabaseReference gymMainRef;
@@ -23,7 +27,8 @@ public class MainSharedPref {
     private static int gymMainNum;
     private static int gymEastNum;
 
-    private static int gymSelection = 0;
+    private static final int streakDayMilliRef = 86400000;
+
 
 
 
@@ -31,7 +36,11 @@ public class MainSharedPref {
 
     private static SharedPreferences instanceSharedPref;
     private static final String STREAK_KEY = "streak";
+    private static final String IS_EXERCISING_KEY = "isExercising";
 
+    private static final String IS_STREAK_AVAILABLE_KEY = "isStreakAvailable";
+
+    private static final String STREAK_INITIAL_TIME_KEY = "streakAvailableTime";
     private static final String GYM_SELECT_KEY = "gymSelect";
 
     private MainSharedPref() {}
@@ -44,6 +53,7 @@ public class MainSharedPref {
         gymMainRef = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("GymMain");
         gymEastRef = FirebaseDatabase.getInstance("https://cs102-73984-default-rtdb.europe-west1.firebasedatabase.app/").getReference("GymEast");
         updateGyms();
+        streakManagement();
     }
 
     public static void saveStreak(int streak) {
@@ -52,12 +62,42 @@ public class MainSharedPref {
         editor.apply();
     }
 
+    public static void saveStreakInitialTime() {
+        SharedPreferences.Editor editor = instanceSharedPref.edit();
+        cal = new GregorianCalendar();
+        editor.putLong(STREAK_INITIAL_TIME_KEY, cal.getTimeInMillis());
+        editor.apply();
+    }
+
     public static void saveGymSelection(int aGymSelection) {
+        if (loadIsExercising() == true)
+        {
+            MainSharedPref.decrementGymCount();
+            MainSharedPref.saveIsExercising(false);
+        }
+
+
         SharedPreferences.Editor editor = instanceSharedPref.edit();
         editor.putInt(GYM_SELECT_KEY, aGymSelection);
         editor.apply();
 
     }
+
+    public static void saveIsExercising(boolean exerciseStatus) {
+        SharedPreferences.Editor editor = instanceSharedPref.edit();
+        editor.putBoolean(IS_EXERCISING_KEY, exerciseStatus);
+        editor.apply();
+
+    }
+
+    public static void saveIsStreakAvailable(boolean streakStatus) {
+        SharedPreferences.Editor editor = instanceSharedPref.edit();
+        editor.putBoolean(IS_STREAK_AVAILABLE_KEY, streakStatus);
+        editor.apply();
+
+    }
+
+
 
 
     public static int loadStreak() {
@@ -66,6 +106,38 @@ public class MainSharedPref {
 
     public static int loadGymSelection() {
         return instanceSharedPref.getInt(GYM_SELECT_KEY, 0);
+    }
+
+    public static boolean loadIsExercising() {
+        return instanceSharedPref.getBoolean(IS_EXERCISING_KEY, false);
+    }
+
+    public static boolean loadIsStreakAvailable() {
+        return instanceSharedPref.getBoolean(IS_STREAK_AVAILABLE_KEY, true);
+    }
+
+    public static long loadStreakInitialTime() {
+        return instanceSharedPref.getLong(STREAK_INITIAL_TIME_KEY, cal.getTimeInMillis());
+    }
+
+    public static void streakManagement()
+    {
+        cal = new GregorianCalendar();
+        long timePassed = cal.getTimeInMillis() - loadStreakInitialTime();
+        if (timePassed < streakDayMilliRef)
+        {
+            //do nothing
+        }
+        else if (timePassed >= streakDayMilliRef && timePassed < (streakDayMilliRef * 2))
+        {
+            saveIsStreakAvailable(true);
+        }
+        else // more time has passed
+        {
+            saveStreak(0); //resets the streak
+            saveIsStreakAvailable(true);
+        }
+
     }
 
     private static void updateGyms() {
@@ -95,6 +167,42 @@ public class MainSharedPref {
         });
 
     }
+
+    public static void incrementGymCount()
+    {
+        int gymSelect = loadGymSelection();
+        if (gymSelect == 0)
+        {
+            gymMainRef.setValue(ServerValue.increment(1));
+        }
+        else if (gymSelect == 1)
+        {
+            gymDormRef.setValue(ServerValue.increment(1));
+        }
+        else if (gymSelect == 2)
+        {
+            gymEastRef.setValue(ServerValue.increment(1));
+        }
+    }
+
+    public static void decrementGymCount()
+    {
+        int gymSelect = loadGymSelection();
+        if (gymSelect == 0)
+        {
+            gymMainRef.setValue(ServerValue.increment(-1));
+        }
+        else if (gymSelect == 1)
+        {
+            gymDormRef.setValue(ServerValue.increment(-1));
+        }
+        else if (gymSelect == 2)
+        {
+            gymEastRef.setValue(ServerValue.increment(-1));
+        }
+    }
+
+
 
     public static int loadGymDorm()
     {

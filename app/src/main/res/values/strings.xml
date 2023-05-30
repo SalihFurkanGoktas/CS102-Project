@@ -4,9 +4,21 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="exercise_array">
-        <item>Exercise 1</item>
-        <item>Exercise 2</item>
-        <item>Exercise 3</item>
+        <item>Chest Press - 4</item>
+        <item>Triceps Press - 8</item>
+        <item>Arm Curl - 7</item>
+        <item>Bench Press</item>
+        <item>Crunches</item>
+    </string-array>
+
+    <string-array name="exercise_details_array">
+        <item>Lay flat on the incline bench with your feet on the ground. Raise the bars until you have straight arms.Lower the bars to your mid chest.</item>
+        <item>Raise your left arm above your head, and bend at the elbow so your hand is resting at the top of your back. Use the opposite hand to gently apply pressure to the elbow.</item>
+        <item>Stand up straight with a dumbell in one hand with your forearm facing out. Raise the dumbell, bending your arm at the elbow and keeping your forearm vertical until your palm faces the shoulder.</item>
+        <item>Lay flat on the bench with your feet on the ground. With straight arms unrack the bar. Lower the bar to your mid chest. Raise the bar until youve locked your elbows.</item>
+        <item>Lay flat on your back with your knees bent and your feet flat on the ground, about a foot from your lower back. Draw your belly into the base of your spine to engage the muscles, then raise your head and shoulders off the floor. Return to starting position and repeat.</item>
+
+
     </string-array>
 
     <string-array name="workout_array">
@@ -15,6 +27,7 @@
         <item>Triceps Press - 8</item>
         <item>Arm Curl - 7</item>
         <item>Bench Press</item>
+        <item>Crunches</item>
     </string-array>
 
 </resources>

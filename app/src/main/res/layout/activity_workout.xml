@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".WorkoutActivity">
 
+  <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/fragmentContainerView3"
+      android:name="androidx.navigation.fragment.NavHostFragment"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:defaultNavHost="true"
+      app:navGraph="@navigation/workout_nav" />
+
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/constraintLayout3"
       android:layout_width="match_parent"
@@ -26,6 +34,20 @@
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 
+  <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/fragmentContainerView3"
+      android:name="androidx.navigation.fragment.NavHostFragment"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:defaultNavHost="true"
+      app:layout_constraintBottom_toTopOf="@id/constraintLayout4"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/constraintLayout3"
+      app:layout_constraintVertical_bias="0.0"
+      app:navGraph="@navigation/workout_nav" />
+
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/constraintLayout4"
       android:layout_width="match_parent"
@@ -34,7 +56,6 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent">
-
 
     <ImageButton
         android:id="@+id/Workout_toMap"
@@ -54,7 +75,7 @@
         android:layout_marginStart="40dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Workout_toMap"
+        app:layout_constraintStart_toEndOf="@id/Workout_toMap"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/workouticon" />
 
@@ -65,7 +86,7 @@
         android:layout_marginStart="48dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Workout_toWorkout"
+        app:layout_constraintStart_toEndOf="@id/Workout_toWorkout"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/homeicon" />
 
@@ -76,7 +97,7 @@
         android:layout_marginStart="36dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Workout_toMain"
+        app:layout_constraintStart_toEndOf="@id/Workout_toMain"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/streakicon" />
 
@@ -87,19 +108,12 @@
         android:layout_marginStart="48dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Workout_toStreak"
+        app:layout_constraintStart_toEndOf="@id/Workout_toStreak"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/settingsicon" />
 
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
 
-  <androidx.fragment.app.FragmentContainerView
-      android:id="@+id/fragmentContainerView3"
-      android:name="androidx.navigation.fragment.NavHostFragment"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      app:defaultNavHost="true"
-      app:navGraph="@navigation/workout_nav" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
