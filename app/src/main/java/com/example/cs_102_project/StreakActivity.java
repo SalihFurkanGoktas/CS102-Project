@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -20,6 +21,8 @@ public class StreakActivity extends AppCompatActivity {
     private ImageButton mainSwitch;
     private ImageButton streakSwitch;
     private ImageButton settingsSwitch;
+
+    private Button rewardButton;
 
     private int streak = 0;
     private GridLayout gridCrosses;
@@ -46,6 +49,8 @@ public class StreakActivity extends AppCompatActivity {
 
         bottomNavButtonManagement();
 
+        rewardButton = findViewById(R.id.extendButton);
+
         gridCrosses = findViewById(R.id.gridCrosses);
 
         gridRewards = findViewById(R.id.gridRewards);
@@ -55,6 +60,12 @@ public class StreakActivity extends AppCompatActivity {
         updateStreakTextView();
         displayCrosses();
         showRewards();
+        if (streak >= 7) {
+            rewardButton.setText("Rewards");
+        }
+        else {
+            rewardButton.setText("");
+        }
     }
 
     public void completeSession(View view)
@@ -99,6 +110,12 @@ public class StreakActivity extends AppCompatActivity {
 
 
         showRewards(); // Display rewards when a week is completed
+        if (streak >= 7) {
+            rewardButton.setText("Rewards");
+        }
+        else {
+            rewardButton.setText("");
+        }
 
 
         MainSharedPref.saveStreak(streak);
@@ -180,10 +197,13 @@ public class StreakActivity extends AppCompatActivity {
 
         if (streakCount >= 7) {
             rewardImage = R.drawable.alttrophy;
+
         }
 
-        else
+        else {
             rewardImage = R.drawable.alttrophy;
+
+        }
 
 
         return rewardImage;
