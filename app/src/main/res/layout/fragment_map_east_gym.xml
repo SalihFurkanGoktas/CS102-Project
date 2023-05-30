@@ -22,10 +22,39 @@
             android:id="@+id/eastGymMemberCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PLACEHOLDER"
+            android:layout_marginTop="120dp"
             android:textColor="@color/white"
-            android:textSize="35sp"
+            android:textSize="24sp"
+            android:text="PLACEHOLDER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/eastGymBackButton"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Back"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/eastGymHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="East Campus Gym"
+            android:textColor="@color/white"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

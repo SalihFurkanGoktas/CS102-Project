@@ -85,7 +85,12 @@ public class workout_1 extends Fragment implements View.OnClickListener {
             public void onClick(View view) {
                 if (MainSharedPref.loadIsExercising() == false)
                 {
-                    MainSharedPref.saveStreak(MainSharedPref.loadStreak() + 1);
+                    if (MainSharedPref.loadIsStreakAvailable() == true)
+                    {
+                        MainSharedPref.saveStreak(MainSharedPref.loadStreak() + 1);
+                        MainSharedPref.saveIsStreakAvailable(false);
+                        MainSharedPref.saveStreakInitialTime();
+                    }
                     MainSharedPref.incrementGymCount();
                     MainSharedPref.saveIsExercising(true);
                     finishBtn.setText("Stop");

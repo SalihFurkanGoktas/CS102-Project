@@ -40,6 +40,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 MainSharedPref.saveStreak(0);
+                MainSharedPref.saveIsStreakAvailable(true);
             }
         });
         resetGymButton = findViewById(R.id.resetGymButton);
