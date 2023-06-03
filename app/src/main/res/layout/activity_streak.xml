@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="completeSession"
-        android:text="Complete Session"
+        android:text="Demonstration - Add Streak"
         android:textColor="@color/black"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
