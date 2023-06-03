@@ -84,7 +84,7 @@ public class workout_5 extends Fragment implements View.OnClickListener {
     {
         finishBtn = view.findViewById(R.id.finishBtn5);
 
-        if (MainSharedPref.loadIsExercising() == false)
+        if (!MainSharedPref.loadIsExercising())
         {
             finishBtn.setText("Start");
         }
