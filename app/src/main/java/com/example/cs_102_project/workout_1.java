@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -18,11 +17,8 @@ import androidx.navigation.Navigation;
 import com.example.cs_102_project.data.WTable_1_Dao;
 import com.example.cs_102_project.data.WorkoutDatabase;
 import com.example.cs_102_project.data.WorkoutTable_1;
-import com.google.android.gms.common.annotation.NonNullApi;
 import androidx.annotation.NonNull;
 
-
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 
@@ -42,7 +38,6 @@ public class workout_1 extends Fragment implements View.OnClickListener {
     public workout_1() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,7 +61,6 @@ public class workout_1 extends Fragment implements View.OnClickListener {
 
         if (view.getId() == backBtn.getId())
             navCtrl.popBackStack();
-
     }
 
     @Override
@@ -85,7 +79,6 @@ public class workout_1 extends Fragment implements View.OnClickListener {
         });
 
         finishButtonManagement(view);
-
     }
 
     public void finishButtonManagement(View view)
@@ -101,14 +94,12 @@ public class workout_1 extends Fragment implements View.OnClickListener {
             finishBtn.setText("Stop");
         }
 
-
-
         finishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (MainSharedPref.loadIsExercising() == false)
+                if (!MainSharedPref.loadIsExercising())
                 {
-                    if (MainSharedPref.loadIsStreakAvailable() == true)
+                    if (MainSharedPref.loadIsStreakAvailable())
                     {
                         MainSharedPref.saveStreak(MainSharedPref.loadStreak() + 1);
                         MainSharedPref.saveIsStreakAvailable(false);

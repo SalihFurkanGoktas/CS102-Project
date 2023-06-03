@@ -12,13 +12,13 @@ import java.util.List;
 public interface WTable_3_Dao {
 
     @Insert
-    void addWork1(WorkoutTable_3 workoutRow);
+    void addWork(WorkoutTable_3 workoutRow);
 
     @Update
-    void updWork1(WorkoutTable_3 workoutRow);
+    void updWork(WorkoutTable_3 workoutRow);
 
     @Delete
-    void delWork1(WorkoutTable_3 workoutRow);
+    void delWork(WorkoutTable_3 workoutRow);
 
     @Query("SELECT * FROM workoutTable_3")
     List<WorkoutTable_3> getEverything();
