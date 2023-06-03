@@ -7,3 +7,6 @@ Group Project Members: Salih Furkan Göktaş, Ramiz Arda Ünal, Bilgehan Tuğcu
 
 The project is an Android Studio project, and thus depends on the Android Software software. It will need to be launched with that.
 The realtime database automatically connects to it, there should be no other dependencies to worry about when it comes to executing the code.
+
+
+**The personal logs of all users are made available in both the GitHub Wiki and as .md files in the repo itself.**
