@@ -29,11 +29,6 @@ public class MainSharedPref {
 
     private static final int streakDayMilliRef = 86400000;
 
-
-
-
-
-
     private static SharedPreferences instanceSharedPref;
     private static final String STREAK_KEY = "streak";
     private static final String IS_EXERCISING_KEY = "isExercising";
